@@ -1,8 +1,8 @@
 package scaffold.styles
 {
 	import flash.filesystem.File;
-	import flash.filesystem.FileMode;
-	import flash.filesystem.FileStream;
+	
+	import helpers.FileHelper;
 	
 	import scaffold.styles.dao.StylesGroupDAO;
 	import scaffold.styles.dao.StylesPropertyDAO;
@@ -30,30 +30,18 @@ package scaffold.styles
 			RENDER
 		--------------------------------------------------------------------- */
 		
-		private function _save_file ( path : String, contents : String ) : void
-		{
-			var stream : FileStream = new FileStream();
-			stream.open( new File( File.applicationDirectory.nativePath + path ), FileMode.WRITE );
-			stream.writeUTFBytes( contents );
-			stream.close();
-		}
-		
-		
-		
-		/* ---------------------------------------------------------------------
-			RENDER
-		--------------------------------------------------------------------- */
-		
 		private function _build_render () : void
 		{
 			var render : String;
+			var path : String;
 			
 			render = _tmpl.render.split( "%NAME_CAMEL%" ).join ( _item.name_camel );
 			render = render.split( "%CLASS_DESCRIPTION%" ).join ( _item.description );
 			render = render.replace( "%PLUGS%", _render_plugs() ); 
 			render = render.replace( "%PROPERTIES%", _render_setters() );
 			
-			_save_file ( "/scaffold/styles/output/renders/"+ _item.name_camel +"Render.as", render );
+			path = "/scaffold/styles/output/renders/"+ _item.name_camel +"Render.as";
+			FileHelper.save_file( path, render );
 		}
 		
 		private function _render_plugs () : String
@@ -92,13 +80,15 @@ package scaffold.styles
 		private function _build_selector() : void
 		{
 			var selector : String;
+			var path : String;
 			
 			selector = _tmpl.selector.split( "%CLASS_DESCRIPTION%" ).join ( _item.description );
 			selector = selector.split( "%NAME_CAMEL%" ).join ( _item.name_camel );
 			selector = selector.replace( "%CONSTANTS%", _selector_constants() ); 
 			selector = selector.replace( "%PROPERTIES%", _selector_getters_setters() );
 			
-			_save_file ( "/scaffold/styles/output/selectors/"+ _item.name_camel +"Selector.as", selector );
+			path = File.applicationDirectory.nativePath + "/scaffold/styles/output/selectors/"+ _item.name_camel +"Selector.as";
+			FileHelper.save_file( path, selector );
 		}
 		
 		private function _selector_constants () : String

@@ -31,8 +31,6 @@ package scaffold.styles
 		{
 			var stream : FileStream;
 			
-			trace ( File.applicationDirectory.nativePath + url );
-			
 			stream = new FileStream();
 			stream.open( new File( File.applicationDirectory.nativePath + url ), FileMode.READ );
 			return stream.readUTFBytes( stream.bytesAvailable );
