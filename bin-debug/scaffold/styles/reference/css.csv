@@ -1,0 +1,88 @@
+selector,status,property,RENDER DESC + getters docs,SELECTOR DESC + setters docs,values
+font,,,Render all Font properties,Provides all Font property selectors
+,TRUE,font,Gets all the font properties in one declaration,Sets all the font properties in one declaration,font-style|font-variant|font-weight|font-size/line-height|font-family|caption|icon|menu|message-box|small-caption|status-bar|inherit
+,FALSE,font-stretch
+,TRUE,font-style,Gets the text's font style,Specifies the font style for text,normal|italic|oblique|inherit
+,TRUE,font-variant,Gets the text's font variant,Specifies whether or not a text should be displayed in a small-caps font,normal|small-caps|inherit
+,TRUE,font-weigth,Gets the text's font weight,Specifies the weight of a font,normal|bold|bolder|lighter|100|200|300|400|500|600|700|800|900|inherit
+,TRUE,font-size,Gets the the text's font size,Specifies the font size of text,xx-small|x-small|small|medium|large|x-large|xx-large|smaller|larger|length|%|inherit
+,TRUE,font-family,Get the text's font family,Specifies the font family for text,family-name|generic-family|inherit
+,FALSE,font-size-adjust (-)
+text
+,,word-spacing,Get the word-spacing for text,Specifies the word-spacing for text,normal|length|inherit
+,,letter-spacing,Get the letter-spacing for text,Specifies the letter-spacing for text,normal|length|inherit
+,,white-space,Get the white-space for text,Specifies the white-space for text,normal|nowrap|pre|pre-line|pre-wrap|inherit
+,,word-wrap,Get the word-wrap for text,Specifies the word-wrap for text,true|false
+,,text-align,Get the text-align for text,Specifies the text-align for text,left|right|center|justify|inherit
+,FALSE,text-align-last (-),Get the word-spacing for text,Specifies the word-spacing for text
+,FALSE,text-valign (+),Get the word-spacing for text,Specifies the word-spacing for text,element|length|%|baseline|sub|super|top|text-top|middle|bottom|text-bottom|inherit
+,,text-decoration,Get the text-decoration for text,Specifies the text-decoration for text,blink|line-through|none|overline|underline|inherit
+,FALSE,text-transform (-),Get the text-transform for text,Specifies the text-transform for text,none|capitalize|uppercase |lowercase|inherit
+,,text-shadow (-),Get the text-shadow for text,Specifies the text-shadow for text,none|shadow|inherit
+,,text-ident,Get the text-ident for text,Specifies the text-ident for text,length|%|inherit
+,FALSE,text-underline-position,Get the text-underline-position for text,Specifies the text-underline-position for text
+list
+,,list-style-type,Get the list-style-type for list,Specifies the list-style-type for list,none|disc|circle|square|decimal|decimal-leading-zero|armenian|georgian|lower-alpha|upper-alpha|lower-greek|lower-latin|upper-latin|lower-roman|upper-roman|inherit
+,,list-style-position,Get the list-style-position for list,Specifies the list-style-position for list,inside|outside|inherit
+,,list-style-image,Get the list-style-image for list,Specifies the list-style-image for list,URL|none|inherit
+,,list-style,Get the list-style for list,Specifies the list-style for list,list-style-type|list-style-position|list-style-image|inherit
+color
+,FALSE,color
+border
+,,border,Get the border for border,Specifies the border for border,border-width|border-style|border-color|inherit
+,,border-color,Get the border-color for border,Specifies the border-color for border,color-rgb|color-hex|color-name|invert|inherit
+,,border-width,Get the border-width for border,Specifies the border-width for border,thin|medium|thick|length|inherit
+,,border-style,Get the border-style for border,Specifies the border-style for border,none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|inherit
+,FALSE,border-radius,Get the border-radius for border,Specifies the border-radius for border
+,FALSE,border-opacity,Get the border-opacity for border,Specifies the border-opacity for border
+,,border-left-color,Get the border-left-color for border,Specifies the border-left-color for border,border-color|inherit
+,,border-left-width,Get the border-left-width for border,Specifies the border-left-width for border,border-width|inherit
+,,border-left-style,Get the border-left-style for border,Specifies the border-left-style for border,border-style|inherit
+,FALSE,border-left-radius,Get the border-left-radius for border,Specifies the border-left-radius for border
+,FALSE,border-left-opacity,Get the border-left-opacity for border,Specifies the border-left-opacity for border
+,,border-top-color,Get the border-top-color for border,Specifies the border-top-color for border,border-color|inherit
+,,border-top-width,Get the border-top-width for border,Specifies the border-top-width for border,border-width|inherit
+,,border-top-style,Get the border-top-style for border,Specifies the border-top-style for border,border-style|inherit
+,FALSE,border-top-radius,Get the border-top-radius for border,Specifies the border-top-radius for border
+,FALSE,border-top-opacity,Get the border-top-opacity for border,Specifies the border-top-opacity for border
+,,border-right-color,Get the border-right-color for border,Specifies the border-right-color for border,border-color|inherit
+,,border-right-width,Get the border-right-width for border,Specifies the border-right-width for border,border-width|inherit
+,,border-right-style,Get the border-right-style for border,Specifies the border-right-style for border,border-style|inherit
+,FALSE,border-right-radius,Get the border-right-radius for border,Specifies the border-right-radius for border
+,FALSE,border-right-opacity,Get the border-right-opacity for border,Specifies the border-right-opacity for border
+,,border-bottom-color,Get the border-bottom-color for border,Specifies the border-bottom-color for border,border-color|inherit
+,,border-bottom-width,Get the border-bottom-width for border,Specifies the border-bottom-width for border,border-width|inherit
+,,border-bottom-style,Get the border-bottom-style for border,Specifies the border-bottom-style for border,border-style|inherit
+,FALSE,border-bottom-radius,Get the border-bottom-radius for border,Specifies the border-bottom-radius for border
+,FALSE,border-bottom-opacity,Get the border-bottom-opacity for border,Specifies the border-bottom-opacity for border
+position
+,,left,Get the left for position,Specifies the left for position,auto|length|%|inherit
+,,top,Get the top for position,Specifies the top for position,auto|length|%|inherit
+,,right,Get the right for position,Specifies the right for position,auto|length|%|inherit
+,,bottom,Get the bottom for position,Specifies the bottom for position,auto|length|%|inherit
+,,align,Get the align for position,Specifies the align for position,left|top|right|bottom
+,FALSE,valign,Get the valign for position,Specifies the valign for position
+,,overflow,Get the overflow for position,Specifies the overflow for position,auto|hidden|scroll|visible|inherit
+,,overflow-x,Get the overflow-x for position,Specifies the overflow-x for position,auto|hidden|scroll|visible|inherit
+,,overflow-y,Get the overflow-y for position,Specifies the overflow-y for position,auto|hidden|scroll|visible|inherit
+,,z-index,Get the z-index for position,Specifies the z-index for position,number|auto|inherit
+margin
+,,margin,Get the margin for margin,Specifies the margin for margin,auto|length|%|inherit
+,,margin-left,Get the margin-left for margin,Specifies the margin-left for margin,auto|length|%|inherit
+,,margin-top,Get the margin-top for margin,Specifies the margin-top for margin,auto|length|%|inherit
+,,margin-right,Get the margin-right for margin,Specifies the margin-right for margin,auto|length|%|inherit
+,,margin-bottom,Get the margin-bottom for margin,Specifies the margin-bottom for margin,auto|length|%|inherit
+padding
+,,padding,Get the padding for padding,Specifies the padding for padding,length|%|inherit
+,,padding-left,Get the padding-left for padding,Specifies the padding-left for padding,length|%|inherit
+,,padding-top,Get the padding-top for padding,Specifies the padding-top for padding,length|%|inherit
+,,padding-right,Get the padding-top for padding,Specifies the padding-top for padding,length|%|inherit
+,,padding-bottom,Get the padding-bottom for padding,Specifies the padding-bottom for padding,length|%|inherit
+dimension
+,,width,Get the width for dimension,Specifies the width for dimension,auto|length|%|inherit  
+,,min-width,Get the min-width for dimension,Specifies the min-width for dimension,auto|length|%|inherit  
+,,max-width,Get the max-width for dimension,Specifies the max-width for dimension,auto|length|%|inherit  
+,,height,Get the height for dimension,Specifies the height for dimension,auto|length|%|inherit  
+,,min-height,Get the min-height for dimension,Specifies the min-height for dimension,auto|length|%|inherit  
+,,max-height,Get the max-height for dimension,Specifies the max-height for dimension,auto|length|%|inherit  
+,FALSE,line-height (-),Get the line-height for dimension,Specifies the line-height for dimension,auto|length|%|inherit  
