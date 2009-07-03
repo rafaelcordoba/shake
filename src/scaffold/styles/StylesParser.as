@@ -60,7 +60,7 @@ package scaffold.styles
 			var output : StylesPropertyDAO;
 			
 			output = new StylesPropertyDAO ();
-			output.lower = column.property.toLocaleLowerCase();
+			output.lower = column.property.toLocaleLowerCase().split ( " " )[ 0 ];
 			output.lower_method = StringUtil.replace( output.lower, "-", "_" );
 			output.upper = StringUtil.replace( output.lower.toUpperCase(), "-", "_" );
 			output.getter_docs = column.rdesc_getter;
