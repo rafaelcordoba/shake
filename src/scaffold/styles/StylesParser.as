@@ -2,67 +2,73 @@ package scaffold.styles
 {
 	import helpers.FileHelper;
 	
+	import scaffold.styles.dao.CsvDAO;
 	import scaffold.styles.dao.StylesGroupDAO;
 	import scaffold.styles.dao.StylesPropertyDAO;
 	
+	import utils.StringUtil;
+	
 	public class StylesParser
 	{
-		private var _reference : XML;
+//		private var _reference : XML;
+		private var _csv : String;
 		
 		public function StylesParser()
 		{
-			_reference = new XML( FileHelper.read( "/scaffold/styles/reference/css.xml" ) );
+//			_reference = new XML( FileHelper.read( "/scaffold/styles/reference/css.xml" ) );
+			_csv = FileHelper.read( "/scaffold/styles/reference/css.csv" );
 		}
 		
-		public function get data () : StylesGroupDAO
+		public function get data () : Array
 		{
-			// TODO: implement method 
-			return _fake_parsed_data;
-		}
-		
-		private function _parse_group () : *
-		{
-			// TODO: implement method 
-			return {};
+			var file : Array;
+			var line : String;
+			var column : CsvDAO;
+			var group : StylesGroupDAO; 
+			var groups : Array;
 			
+			file = _csv.split( "\n" ).slice ( 1 );
+			groups = [];
+			
+			for each ( line in file )
+			{
+				column = new CsvDAO ( line );
+				if ( column.isgroup )
+					groups.push ( group = _parse_group( column ) );
+				else if ( column.parseable )
+					group.properties.push( _parse_properties( column, group ) );
+			}
+			
+			return groups;
 		}
 		
-		private function _parse_properties () : *
+		
+		private function _parse_group ( column : CsvDAO ) : StylesGroupDAO
 		{
-			// TODO: implement method 
-			return {};
+			var output : StylesGroupDAO;
+			
+			output = new StylesGroupDAO ();
+			output.render_description = column.rdesc_getter;
+			output.selector_description = column.sdesc_setter;
+			output.name_camel = StringUtil.ucasef( column.selector );
+			
+			return output;
 		}
 		
-		
-		private function get _fake_parsed_data () : StylesGroupDAO
+		private function _parse_properties ( column : CsvDAO, group : StylesGroupDAO ) : StylesPropertyDAO
 		{
-			var item : StylesGroupDAO;
-            var property : StylesPropertyDAO;
-            
-            // ITEM
-            item = new StylesGroupDAO ();
-            item.name_camel = "Position";
-            item.description = "Render all position's properties.";
-            item.properties = [];
-            
-            // PROP: left
-            property = new StylesPropertyDAO ();
-            property.lower = "left";
-            property.upper = "LEFT";
-            property.values = "auto, length, %, inherit";
-            property.documentation = "Sets the left margin edge for a positioned box";
-            item.properties.push( property );
-            
-            // PROP: top
-            property = new StylesPropertyDAO ();
-            property.lower = "top";
-            property.upper = "TOP";
-            property.values = "auto, length, %, inherit";
-            property.documentation = "Sets the top margin edge for a positioned box";
-            item.properties.push( property );
-            
-            return item;
+			var output : StylesPropertyDAO;
+			
+			output = new StylesPropertyDAO ();
+			output.lower = column.property.toLocaleLowerCase();
+			output.lower_method = StringUtil.replace( output.lower, "-", "_" );
+			output.upper = StringUtil.replace( output.lower.toUpperCase(), "-", "_" );
+			output.getter_docs = column.rdesc_getter;
+			output.getter_return_docs = StringUtil.ucasef( column.rdesc_getter.split ( " " ).slice ( 1 ).join ( "" ) );
+			output.setter_docs = column.sdesc_setter;
+			output.values = StringUtil.replace( column.values, "|", ", " );
+			
+			return output;
 		}
-		
 	}
 }

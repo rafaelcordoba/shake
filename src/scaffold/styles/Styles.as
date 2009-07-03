@@ -1,7 +1,5 @@
 package scaffold.styles
 {
-	import flash.filesystem.File;
-	
 	import helpers.FileHelper;
 	
 	import scaffold.styles.dao.StylesGroupDAO;
@@ -17,11 +15,13 @@ package scaffold.styles
 			_tmpl = new StylesTmpl ();
 		}
 		
-		public function build ( item : StylesGroupDAO ) : void
+		public function build ( groups : Array ) : void
 		{
-			_item = item;
-			_build_render(); 
-			_build_selector(); 
+			for each ( _item in groups )
+			{
+				_build_render(); 
+				_build_selector(); 
+			}
 		}
 		
 		
@@ -36,7 +36,7 @@ package scaffold.styles
 			var path : String;
 			
 			render = _tmpl.render.split( "%NAME_CAMEL%" ).join ( _item.name_camel );
-			render = render.split( "%CLASS_DESCRIPTION%" ).join ( _item.description );
+			render = render.split( "%CLASS_DESCRIPTION%" ).join ( _item.render_description );
 			render = render.replace( "%PLUGS%", _render_plugs() ); 
 			render = render.replace( "%PROPERTIES%", _render_setters() );
 			
@@ -54,7 +54,7 @@ package scaffold.styles
 				plugs += _tmpl.render_plugs
 							.replace( "%NAME_CAMEL%", _item.name_camel )
 							.replace( "%PROPERTY_UPPER%", prop.upper )
-							.replace( "%PROPERTY_LOWER%", prop.lower ) +"\n";
+							.replace( "%PROPERTY_LOWER_METHOD%", prop.lower_method ) +"\n";
 			
 			return plugs.substr( 0, -1 );
 		}
@@ -66,7 +66,7 @@ package scaffold.styles
 			
 			setters = "";
 			for each ( prop in _item.properties )
-				setters += _tmpl.render_setters.replace( "%PROPERTY_LOWER%", prop.lower ) +"\n\n";
+				setters += _tmpl.render_setters.replace( "%PROPERTY_LOWER_METHOD%", prop.lower_method ) +"\n\n";
 			
 			return setters.substr ( 0, -2 );
 		}
@@ -82,7 +82,7 @@ package scaffold.styles
 			var selector : String;
 			var path : String;
 			
-			selector = _tmpl.selector.split( "%CLASS_DESCRIPTION%" ).join ( _item.description );
+			selector = _tmpl.selector.split( "%CLASS_DESCRIPTION%" ).join ( _item.selector_description );
 			selector = selector.split( "%NAME_CAMEL%" ).join ( _item.name_camel );
 			selector = selector.replace( "%CONSTANTS%", _selector_constants() ); 
 			selector = selector.replace( "%PROPERTIES%", _selector_getters_setters() );
@@ -113,9 +113,11 @@ package scaffold.styles
 			getters_setters = "";
 			for each ( prop in _item.properties )
 				getters_setters += _tmpl.selector_getters_setters
-									.split( "%PROPERTY_LOWER%" ).join ( prop.lower)
+									.split( "%PROPERTY_LOWER_METHOD%" ).join ( prop.lower_method )
 									.split( "%PROPERTY_UPPER%" ).join ( prop.upper )
-									.split( "%DOCUMENTATION%" ).join ( prop.documentation )
+									.split( "%GETTER_DOCUMENTATION%" ).join ( prop.getter_docs )
+									.split( "%GETTER_RETURN%" ).join ( prop.getter_return_docs )
+									.split( "%SETTER_DOCUMENTATION%" ).join ( prop.setter_docs )
 									.split( "%VALUES%" ).join ( prop.values ) + "\n\n\n\n";
 			
 			return getters_setters.substr ( 0, -4 );
