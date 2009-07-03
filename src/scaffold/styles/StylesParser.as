@@ -64,7 +64,7 @@ package scaffold.styles
 			output.lower_method = StringUtil.replace( output.lower, "-", "_" );
 			output.upper = StringUtil.replace( output.lower.toUpperCase(), "-", "_" );
 			output.getter_docs = column.rdesc_getter;
-			output.getter_return_docs = StringUtil.ucasef( column.rdesc_getter.split ( " " ).slice ( 1 ).join ( "" ) );
+			output.getter_return_docs = StringUtil.ucasef( column.rdesc_getter.split ( " " ).slice ( 1 ).join ( " " ) );
 			output.setter_docs = column.sdesc_setter;
 			output.values = StringUtil.replace( column.values, "|", ", " );
 			
