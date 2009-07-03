@@ -87,7 +87,7 @@ package scaffold.styles
 			selector = selector.replace( "%CONSTANTS%", _selector_constants() ); 
 			selector = selector.replace( "%PROPERTIES%", _selector_getters_setters() );
 			
-			path = File.applicationDirectory.nativePath + "/scaffold/styles/output/selectors/"+ _item.name_camel +"Selector.as";
+			path = "/scaffold/styles/output/selectors/"+ _item.name_camel +"Selector.as";
 			FileHelper.save_file( path, selector );
 		}
 		
