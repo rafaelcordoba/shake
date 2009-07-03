@@ -19,8 +19,11 @@ package scaffold.styles
 		{
 			for each ( _item in groups )
 			{
+				if ( ! _item.properties.length )
+					continue;
+				
 				_build_render(); 
-				_build_selector(); 
+				_build_selector();
 			}
 		}
 		
