@@ -33,28 +33,28 @@ border,,,Render all Border properties,Provides all Border property selectors
 ,,border-color,Get the border-color for border,Specifies the border-color for border,color-rgb|color-hex|color-name|invert|inherit
 ,,border-width,Get the border-width for border,Specifies the border-width for border,thin|medium|thick|length|inherit
 ,,border-style,Get the border-style for border,Specifies the border-style for border,none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|inherit
-,FALSE,border-radius,Get the border-radius for border,Specifies the border-radius for border
-,FALSE,border-opacity,Get the border-opacity for border,Specifies the border-opacity for border
+,,border-radius,Get the border-radius for border,Specifies the border-radius for border,TODO: add possibilities
+,,border-opacity,Get the border-opacity for border,Specifies the border-opacity for border,TODO: add possibilities
 ,,border-left-color,Get the border-left-color for border,Specifies the border-left-color for border,border-color|inherit
 ,,border-left-width,Get the border-left-width for border,Specifies the border-left-width for border,border-width|inherit
 ,,border-left-style,Get the border-left-style for border,Specifies the border-left-style for border,border-style|inherit
-,FALSE,border-left-radius,Get the border-left-radius for border,Specifies the border-left-radius for border
-,FALSE,border-left-opacity,Get the border-left-opacity for border,Specifies the border-left-opacity for border
+,,border-left-radius,Get the border-left-radius for border,Specifies the border-left-radius for border,TODO: add possibilities
+,,border-left-opacity,Get the border-left-opacity for border,Specifies the border-left-opacity for border,TODO: add possibilities
 ,,border-top-color,Get the border-top-color for border,Specifies the border-top-color for border,border-color|inherit
 ,,border-top-width,Get the border-top-width for border,Specifies the border-top-width for border,border-width|inherit
 ,,border-top-style,Get the border-top-style for border,Specifies the border-top-style for border,border-style|inherit
-,FALSE,border-top-radius,Get the border-top-radius for border,Specifies the border-top-radius for border
-,FALSE,border-top-opacity,Get the border-top-opacity for border,Specifies the border-top-opacity for border
+,,border-top-radius,Get the border-top-radius for border,Specifies the border-top-radius for border,TODO: add possibilities
+,,border-top-opacity,Get the border-top-opacity for border,Specifies the border-top-opacity for border,TODO: add possibilities
 ,,border-right-color,Get the border-right-color for border,Specifies the border-right-color for border,border-color|inherit
 ,,border-right-width,Get the border-right-width for border,Specifies the border-right-width for border,border-width|inherit
 ,,border-right-style,Get the border-right-style for border,Specifies the border-right-style for border,border-style|inherit
-,FALSE,border-right-radius,Get the border-right-radius for border,Specifies the border-right-radius for border
-,FALSE,border-right-opacity,Get the border-right-opacity for border,Specifies the border-right-opacity for border
+,,border-right-radius,Get the border-right-radius for border,Specifies the border-right-radius for border,TODO: add possibilities
+,,border-right-opacity,Get the border-right-opacity for border,Specifies the border-right-opacity for border,TODO: add possibilities
 ,,border-bottom-color,Get the border-bottom-color for border,Specifies the border-bottom-color for border,border-color|inherit
 ,,border-bottom-width,Get the border-bottom-width for border,Specifies the border-bottom-width for border,border-width|inherit
 ,,border-bottom-style,Get the border-bottom-style for border,Specifies the border-bottom-style for border,border-style|inherit
-,FALSE,border-bottom-radius,Get the border-bottom-radius for border,Specifies the border-bottom-radius for border
-,FALSE,border-bottom-opacity,Get the border-bottom-opacity for border,Specifies the border-bottom-opacity for border
+,,border-bottom-radius,Get the border-bottom-radius for border,Specifies the border-bottom-radius for border,TODO: add possibilities
+,,border-bottom-opacity,Get the border-bottom-opacity for border,Specifies the border-bottom-opacity for border,TODO: add possibilities
 position,,,Render all Position properties,Provides all Position property selectors
 ,,left,Get the left for position,Specifies the left for position,auto|length|%|inherit
 ,,top,Get the top for position,Specifies the top for position,auto|length|%|inherit
@@ -86,3 +86,10 @@ dimension,,,Render all Dimension properties,Provides all Dimension property sele
 ,,min-height,Get the min-height for dimension,Specifies the min-height for dimension,auto|length|%|inherit  
 ,,max-height,Get the max-height for dimension,Specifies the max-height for dimension,auto|length|%|inherit  
 ,FALSE,line-height (-),Get the line-height for dimension,Specifies the line-height for dimension,auto|length|%|inherit  
+transform,,,"Render all Transform properties
+",Provides all Transform property selectors
+,FALSE,rotation
+,FALSE,scale
+,FALSE,scale-x
+,FALSE,scale-y
+filters,,,Render all Filter properties,Provides all Filters property selectors
