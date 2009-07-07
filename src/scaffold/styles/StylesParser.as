@@ -10,12 +10,10 @@ package scaffold.styles
 	
 	public class StylesParser
 	{
-//		private var _reference : XML;
 		private var _csv : String;
 		
 		public function StylesParser()
 		{
-//			_reference = new XML( FileHelper.read( "/scaffold/styles/reference/css.xml" ) );
 			_csv = FileHelper.read( "/scaffold/styles/reference/css.csv" );
 		}
 		
