@@ -1,4 +1,4 @@
-package shake.menu.gunz 
+package shake.mvc.views.menu.gunz 
 {
 	import cocktail.core.gunz.Bullet;
 

@@ -6,6 +6,7 @@
 	<mx:Script>
 	
 		<![CDATA[
+			import shake.Shake;
 			
 			private var shake : Shake;
 			

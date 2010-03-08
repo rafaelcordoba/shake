@@ -1,5 +1,4 @@
-package  
-shake.base
+package shake.boot
 {
 	import mx.core.UIComponent;
 
@@ -9,18 +8,19 @@ shake.base
 	/**
 	 * @author Carlinhos
 	 */
-	public class BaseShake extends Sprite 
+	public class ABoot extends Sprite 
 	{
-		protected var _base : Base;
+		protected var _boot : Boot;
+
 		protected var _holder : UIComponent;
-		
-		public function BaseShake( base : Base )
+
+		public function ABoot( boot : Boot )
 		{
-			_base = base;
-			_holder = new UIComponent();
-			_base.holder.addChild( _holder );
+			_boot = boot;
+			_holder = new UIComponent( );
+			_boot.holder.addChild( _holder );
 		}
-		
+
 		override public function addChild( child : DisplayObject ) : DisplayObject
 		{
 			return _holder.addChild( child );

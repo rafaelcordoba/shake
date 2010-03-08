@@ -1,18 +1,19 @@
-package  
-shake.base
+package shake  
 {
-	import shake.menu.ShakeMenu;
-	import shake.menu.gunz.MenuBullet;
-	import shake.system.System;
-	import shake.system.gunz.SystemBullet;
-	import shake.tree.ShakeTree;
+	import shake.boot.ABoot;
+	import shake.boot.Boot;
+	import shake.core.system.System;
+	import shake.core.system.gunz.SystemBullet;
+	import shake.mvc.views.menu.ShakeMenu;
+	import shake.mvc.views.menu.gunz.MenuBullet;
+	import shake.mvc.views.tree.ShakeTree;
 
 	/**
 	 * @author Carlinhos
 	 * 
 	 * This class is the init view of the application.
 	 */
-	public class Shake extends BaseShake 
+	public class Shake extends ABoot 
 	{
 		/* vars */
 		private var menu : ShakeMenu;
@@ -22,11 +23,11 @@ shake.base
 		/**
 		 * Constructor
 		 * 
-		 * This class is instanciated by the main mxml entrypoint ( Base.mxml )
+		 * This class is instanciated by the main mxml entrypoint ( Boot.mxml )
 		 */
-		public function Shake( base : Base )
+		public function Shake( boot : Boot )
 		{
-			super( base );
+			super( boot );
 			add_childs();
 		}
 		
@@ -36,14 +37,14 @@ shake.base
 		private function add_childs() : void
 		{
 			//menu
-			menu = new ShakeMenu( _base );
-			menu.menu = _base.applicationMenu;
+			menu = new ShakeMenu( _boot );
+			menu.menu = _boot.applicationMenu;
 			menu.gunz_select.add( menu_change );
 			addChild( menu );
 			
 			//tree
-			tree = new ShakeTree( _base );
-			tree.tree = _base.shakeTree;
+			tree = new ShakeTree( _boot );
+			tree.tree = _boot.shakeTree;
 			addChild( tree );
 			
 			//system
