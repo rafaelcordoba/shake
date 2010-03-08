@@ -2,7 +2,7 @@ package
 shake.base
 {
 	import shake.menu.gunz.MenuBullet;
-	import shake.menu.ApplicationMenu;
+	import shake.menu.ShakeMenu;
 
 	/**
 	 * @author Carlinhos
@@ -12,7 +12,7 @@ shake.base
 	public class Shake extends BaseShake 
 	{
 		/* vars */
-		private var menu : ApplicationMenu;
+		private var menu : ShakeMenu;
 		
 		public function Shake( base : Base )
 		{
@@ -24,7 +24,7 @@ shake.base
 		private function add_childs() : void
 		{
 			//menu
-			menu = new ApplicationMenu( _base );
+			menu = new ShakeMenu( _base );
 			menu.menu = _base.applicationMenu;
 			menu.gunz_select.add( menu_change );
 			addChild( menu );
@@ -32,7 +32,14 @@ shake.base
 		
 		private function menu_change ( bullet : MenuBullet ) : void
 		{
-			trace( "=D ", bullet.selected );
+			switch ( bullet.selected ) 
+			{
+				case ShakeMenu.NEW_COCKTAIL_PROJECT :
+				break;
+				case ShakeMenu.OPEN_COCKTAIL_PROJECT :
+				break;
+			}
+			
 		}
 		
 	}

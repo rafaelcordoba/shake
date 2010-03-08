@@ -12,7 +12,7 @@ package shake.menu
 	/**
 	 * @author Carlinhos
 	 */
-	public class ApplicationMenu extends BaseShake 
+	public class ShakeMenu extends BaseShake 
 	{
 		/* GUNZ */
 		public var gunz : Gunz;
@@ -21,8 +21,11 @@ package shake.menu
 		/* vars */
 		private var _menu : MenuBar;
 		
+		/* MENU ITEM DATA */
+		public static final var NEW_COCKTAIL_PROJECT : String = "NEW_COCKTAIL_PROJECT";
+		public static final var OPEN_COCKTAIL_PROJECT : String = "OPEN_COCKTAIL_PROJECT";
 		
-		public function ApplicationMenu( base : Base )
+		public function ShakeMenu( base : Base )
 		{
 			super( base );
 			_init_gunz();
