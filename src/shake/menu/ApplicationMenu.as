@@ -42,7 +42,7 @@ package shake.menu
 		
 		private function _menu_select ( event : MenuEvent ) : void
 		{
-			gunz_select.shoot( new MenuBullet( ( event.item as XML ).attribute( "data" ) ) );
+			gunz_select.shoot( new MenuBullet( ( event.item as XML ).@data ) );
 		}
 	}
 }
