@@ -1,6 +1,6 @@
 package shake.menu.gunz 
 {
-	import shake.gunz.Bullet;
+	import cocktail.core.gunz.Bullet;
 
 	/**
 	 * @author Carlinhos

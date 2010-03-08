@@ -1,13 +1,14 @@
 package shake.menu 
 {
-	import shake.menu.gunz.MenuBullet;
-	import mx.events.MenuEvent;
-	import shake.gunz.Gun;
-	import shake.gunz.Gunz;
+	import cocktail.core.gunz.Gun;
+	import cocktail.core.gunz.Gunz;
+
 	import shake.base.Base;
 	import shake.base.BaseShake;
+	import shake.menu.gunz.MenuBullet;
 
 	import mx.controls.MenuBar;
+	import mx.events.MenuEvent;
 
 	/**
 	 * @author Carlinhos

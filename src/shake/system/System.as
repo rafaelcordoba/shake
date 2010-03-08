@@ -1,10 +1,11 @@
 package shake.system 
 {
-	import shake.system.gunz.SystemBullet;
-	import flash.events.Event;
-	import shake.gunz.Gun;
-	import shake.gunz.Gunz;
+	import cocktail.core.gunz.Gun;
+	import cocktail.core.gunz.Gunz;
 
+	import shake.system.gunz.SystemBullet;
+
+	import flash.events.Event;
 	import flash.filesystem.File;
 
 	/**
