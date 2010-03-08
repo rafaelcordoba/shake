@@ -22,8 +22,8 @@ package shake.menu
 		private var _menu : MenuBar;
 		
 		/* MENU ITEM DATA */
-		public static final var NEW_COCKTAIL_PROJECT : String = "NEW_COCKTAIL_PROJECT";
-		public static final var OPEN_COCKTAIL_PROJECT : String = "OPEN_COCKTAIL_PROJECT";
+		public static var NEW_COCKTAIL_PROJECT : String = "NEW_COCKTAIL_PROJECT";
+		public static var OPEN_COCKTAIL_PROJECT : String = "OPEN_COCKTAIL_PROJECT";
 		
 		public function ShakeMenu( base : Base )
 		{
