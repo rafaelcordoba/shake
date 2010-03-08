@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" >
+
+	<mx:UIComponent id="holder" />
+
+	<mx:Script>
+	
+		<![CDATA[
+
+			public function init() : void
+			{
+				var mv : Shake = new Shake( this );
+			}
+			
+			
+		]]>
+	
+	</mx:Script>	
+	
+
+</mx:Application>
