@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="1024" height="768">
+
+	<mx:UIComponent id="holder" />
+
+	<mx:Script>
+	
+		<![CDATA[
+			
+			private var shake : Shake;
+			
+			public function init() : void
+			{
+				shake = new Shake( this );
+			}
+			
+		]]>
+	
+	</mx:Script>	
+	
+	 <mx:MenuBar id="applicationMenu" labelField="@label" width="100%">
+        <mx:XMLList>
+            <menuitem label="Shake" selected="true" />
+            <menuitem label="File">
+                <menuitem label="New">
+					<menuitem label="Cocktail Project" data="NEW_COCKTAIL_PROJECT"></menuitem>                	
+                </menuitem>
+                <menuitem label="Open">
+					<menuitem label="Cocktail Project" data="OPEN_COCKTAIL_PROJECT"></menuitem>	
+                </menuitem>
+            </menuitem>
+        </mx:XMLList>
+    </mx:MenuBar>
+	
+
+</mx:Application>

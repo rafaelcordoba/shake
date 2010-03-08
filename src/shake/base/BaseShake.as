@@ -1,5 +1,5 @@
 package  
-shake
+shake.base
 {
 	import mx.core.UIComponent;
 
