@@ -1,15 +1,16 @@
 package shake.mvc.views.explorer 
 {
-	import shake.mvc.views.explorer.gunz.ExplorerBullet;
-	import flash.events.Event;
 	import cocktail.core.gunz.Gun;
 	import cocktail.core.gunz.Gunz;
 
 	import shake.boot.ABoot;
 	import shake.boot.Boot;
 	import shake.mvc.models.ExplorerModel;
+	import shake.mvc.views.explorer.gunz.ExplorerBullet;
 
 	import mx.controls.Tree;
+
+	import flash.events.Event;
 
 	/**
 	 * @author Carlinhos
@@ -48,7 +49,7 @@ package shake.mvc.views.explorer
 		public function mount( layouts : Array, models : Array ) : void
 		{
 			_model = new ExplorerModel( layouts, models );
-			//_tree.dataProvider = _model.tree;
+			_tree.dataProvider = _model.tree;
 		}
 		
 		/* HANDLERS */
