@@ -1,5 +1,6 @@
 package shake  
 {
+	import shake.mvc.views.explorer.gunz.ExplorerBullet;
 	import shake.boot.ABoot;
 	import shake.boot.Boot;
 	import shake.core.system.System;
@@ -17,7 +18,7 @@ package shake
 	{
 		/* vars */
 		private var menu : Menu;
-		private var tree : Explorer;
+		private var explorer : Explorer;
 		private var system : System;
 		
 		/**
@@ -43,9 +44,10 @@ package shake
 			addChild( menu );
 			
 			//tree
-			tree = new Explorer( _boot );
-			tree.tree = _boot.shakeTree;
-			addChild( tree );
+			explorer = new Explorer( _boot );
+			explorer.tree = _boot.shakeTree;
+			explorer.gunz_select.add( tree_select );
+			addChild( explorer );
 			
 			//system
 			system = new System();
@@ -67,12 +69,17 @@ package shake
 			}
 		}
 		
+		private function tree_select ( bullet : ExplorerBullet ) : void
+		{
+			trace( "EXPLORER SELECT ::::::", bullet.selected );
+		}
+		
 		/**
 		 * Invoked by the gunz when the user selects a app folder.
 		 */
 		private function _system_select ( bullet : SystemBullet ) : void
 		{
-			tree.mount( bullet.layouts, bullet.models );
+			explorer.mount( bullet.layouts, bullet.models );
 		}
 	}
 }
