@@ -51,31 +51,49 @@ package shake.core.system
 				file = files[ i ] as File;
 				if ( file.isDirectory && file.name == "cocktail" )
 				{
-					bullet = new SystemBullet( _get_views( file ), _get_models( file ) );
+					bullet = new SystemBullet( _get_layouts( file ), _get_models( file ) );
 					gunz_select.shoot( bullet );
 					return;
 				}
 			}
 		}
 
-		private function _get_views( cocktail : File ) : Array
+		private function _get_layouts( cocktail : File ) : Array
 		{
-			var views : Array;
-			var dir : File = new File( cocktail.url + "/xml/views" );
+			var i : int;
+			var layouts : Array;
+			var dir : File = new File( cocktail.url + "/xml/layouts" );
+			
 			if ( dir.exists )
 			{
-				views = dir.getDirectoryListing( );				
+				layouts = dir.getDirectoryListing( );
+				while( i < layouts.length )
+				{
+					if( File( layouts[ i ] ).isDirectory )
+						layouts.splice( i, 1 );
+					else
+						i++;
+				}
 			}
-			return views;
+			return layouts;
 		}
 
 		private function _get_models( cocktail : File ) : Array
 		{
+			var i : int;
 			var models : Array;
 			var dir : File = new File( cocktail.url + "/xml/models" );
+			
 			if ( dir.exists )
 			{
 				models = dir.getDirectoryListing( );				
+				while( i < models.length )
+				{
+					if( File( models[ i ] ).isDirectory )
+						models.splice( i, 1 );
+					else
+						i++;
+				}
 			}
 			return models;
 		}
