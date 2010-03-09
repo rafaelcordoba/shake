@@ -1,5 +1,7 @@
 package shake.mvc.models
 {
+	import shake.core.helpers.FileHelper;
+
 	import flash.filesystem.File;
 
 	/**
@@ -25,12 +27,11 @@ package shake.mvc.models
 		{
 			var i : int;
 			var len : int;
-			var item : XML;
 			var layout : File;
 			var model : File;
 			
-			len = Math.max( _layouts.length, _models.length ); 
-			while( i++ < len )
+			len = Math.max( _layouts.length, _models.length );
+			do
 			{
 				if( i < _layouts.length )
 					layout = _layouts[ i ];
@@ -38,12 +39,12 @@ package shake.mvc.models
 				if( i < _models.length )
 					model = _models[ i ];
 				
-				trace( layout.name, model.name );
 				if( layout.name == model.name )
 					_tree.appendChild( _parse_both( layout, model ) );
 				else
 					trace( "TODO: Code exception here at ExplorerModel@44" );
 			}
+			while( ++i < len );
 		}
 
 		private function _parse_both( layout : File, model : File ) : XML 
@@ -66,11 +67,17 @@ package shake.mvc.models
 			return item;
 		}
 
-		private function _parse_model( file : File) : XML 
+		private function _parse_model( file : File ) : XML
 		{
 			var item : XML;
+			var scheme : XML;
 			
 			item = <node label="model" />;
+			scheme = new XML( FileHelper.read( file.nativePath ) );
+			
+			// parse datasouces
+			for each( var ds : XML in scheme.children( ) )
+				item.appendChild( <node label={ds.@id} data={ds.localName( ) } /> );
 			
 			return item;
 		}
