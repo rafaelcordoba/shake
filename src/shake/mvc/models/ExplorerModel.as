@@ -61,8 +61,15 @@ package shake.mvc.models
 		private function _parse_layout( file : File ) : XML 
 		{
 			var item : XML;
+			var scheme : XML;
 			
 			item = <node label="layout" />;
+			scheme = new XML( FileHelper.read( file.nativePath ) );
+			
+			// parse layout views
+			for each( var ds : XML in scheme.children( ) )
+				// TODO: parse layout views
+				ds;
 			
 			return item;
 		}
