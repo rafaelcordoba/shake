@@ -84,7 +84,7 @@ package shake.mvc.models
 			
 			// parse datasouces
 			for each( var ds : XML in scheme.children( ) )
-				item.appendChild( <node label={ds.@id} data={ds.localName( ) } /> );
+				item.appendChild( <node label={ds.@id} type={ds.localName( )} data={ds.children()} /> );
 			
 			return item;
 		}
