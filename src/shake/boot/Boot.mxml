@@ -35,9 +35,10 @@
     
     <mx:HDividedBox x="0" y="0" width="100%" height="100%" top="25">
 		<mx:HBox width="20%" height="100%">
-				<mx:Tree id="shakeTree" width="100%" height="100%" labelField="@title" ></mx:Tree>
+				<mx:Tree id="shakeTree" width="100%" height="100%" labelField="@label" ></mx:Tree>
 		</mx:HBox>
 		<mx:HBox width="80%" height="100%">
+			
 		</mx:HBox>
 	</mx:HDividedBox>
 	

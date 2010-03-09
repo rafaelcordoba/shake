@@ -4,9 +4,9 @@ package shake
 	import shake.boot.Boot;
 	import shake.core.system.System;
 	import shake.core.system.gunz.SystemBullet;
-	import shake.mvc.views.menu.ShakeMenu;
+	import shake.mvc.views.explorer.Explorer;
+	import shake.mvc.views.menu.Menu;
 	import shake.mvc.views.menu.gunz.MenuBullet;
-	import shake.mvc.views.tree.ShakeTree;
 
 	/**
 	 * @author Carlinhos
@@ -16,8 +16,8 @@ package shake
 	public class Shake extends ABoot 
 	{
 		/* vars */
-		private var menu : ShakeMenu;
-		private var tree : ShakeTree;
+		private var menu : Menu;
+		private var tree : Explorer;
 		private var system : System;
 		
 		/**
@@ -37,13 +37,13 @@ package shake
 		private function add_childs() : void
 		{
 			//menu
-			menu = new ShakeMenu( _boot );
+			menu = new Menu( _boot );
 			menu.menu = _boot.applicationMenu;
 			menu.gunz_select.add( menu_change );
 			addChild( menu );
 			
 			//tree
-			tree = new ShakeTree( _boot );
+			tree = new Explorer( _boot );
 			tree.tree = _boot.shakeTree;
 			addChild( tree );
 			
@@ -59,9 +59,9 @@ package shake
 		{
 			switch ( bullet.selected ) 
 			{
-				case ShakeMenu.NEW_COCKTAIL_PROJECT :
+				case Menu.NEW_COCKTAIL_PROJECT :
 				break;
-				case ShakeMenu.OPEN_COCKTAIL_PROJECT :
+				case Menu.OPEN_COCKTAIL_PROJECT :
 					system.open_project();
 				break;
 			}
@@ -72,7 +72,7 @@ package shake
 		 */
 		private function _system_select ( bullet : SystemBullet ) : void
 		{
-			tree.mount( bullet.views, bullet.models );
+			tree.mount( bullet.layouts, bullet.models );
 		}
 	}
 }

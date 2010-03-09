@@ -13,7 +13,7 @@ package shake.mvc.views.menu
 	/**
 	 * @author Carlinhos
 	 */
-	public class ShakeMenu extends ABoot 
+	public class Menu extends ABoot 
 	{
 		/* GUNZ */
 		public var gunz : Gunz;
@@ -28,7 +28,7 @@ package shake.mvc.views.menu
 
 		public static var OPEN_COCKTAIL_PROJECT : String = "OPEN_COCKTAIL_PROJECT";
 
-		public function ShakeMenu( boot : Boot )
+		public function Menu( boot : Boot )
 		{
 			super( boot );
 			_init_gunz( );
