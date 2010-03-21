@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launchConfiguration type="com.powerflasher.fdt.ui.MxmlcGroup">
-<stringAttribute key="APP_ARGUMENTS" value="."/>
-<stringAttribute key="ARGUMENTS" value="-default-size 1200 700 -default-frame-rate 31 -default-background-color 0xFFFFFF -library-path {flexSDK}/frameworks/locale/en_US"/>
-<stringAttribute key="FLEX_SDK_NAME" value="Flex_3_SDK_0_Pure_for_FP_10"/>
+<stringAttribute key="APP_ARGUMENTS" value="a"/>
+<stringAttribute key="ARGUMENTS" value="-default-size 1000 800 -default-frame-rate 31 -default-background-color 0xFFFFFF -library-path {flexSDK}/frameworks/locale/en_US"/>
+<stringAttribute key="FLEX_SDK_NAME" value="Flex_3_SDK_0_with_AIR"/>
 <booleanAttribute key="KILL_PREVIUOS_VIEWER" value="false"/>
-<stringAttribute key="MAIN_CLASS" value="src/shake/boot/Boot.mxml"/>
-<stringAttribute key="OUTPUT" value="bin/Boot.swf"/>
+<stringAttribute key="MAIN_CLASS" value="src/Shake.as"/>
+<stringAttribute key="OUTPUT" value="bin/Shake.swf"/>
 <booleanAttribute key="PASS_CP" value="true"/>
 <booleanAttribute key="PASS_MAIN_CLASS" value="true"/>
 <booleanAttribute key="PASS_SWCS" value="true"/>
-<intAttribute key="PLAYER_HEIGHT" value="700"/>
+<intAttribute key="PLAYER_HEIGHT" value="1000"/>
 <intAttribute key="PLAYER_WIDTH" value="1200"/>
 <stringAttribute key="POST_COMPILE_ANT" value=""/>
 <stringAttribute key="PRE_COMPILE_ANT" value=""/>
-<stringAttribute key="PROJECT_NAME" value="shake"/>
-<stringAttribute key="PUBLISHER_ID" value="Shake"/>
+<stringAttribute key="PROJECT_NAME" value="teste-aswing"/>
+<stringAttribute key="PUBLISHER_ID" value="a"/>
 <booleanAttribute key="START_SWF_ENABLED" value="true"/>
-<stringAttribute key="START_SWF_LOCATION" value="bin/Boot.swf"/>
+<stringAttribute key="START_SWF_LOCATION" value="bin/Shake.swf"/>
 <stringAttribute key="START_SWF_WITH" value="AIR Debug Launcher"/>
 <booleanAttribute key="USE_GLOBAL_FCSH_LOCATION" value="true"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/shake"/>
+<listEntry value="/teste-aswing"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>

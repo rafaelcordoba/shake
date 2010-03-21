@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><application xmlns="http://ns.adobe.com/air/application/1.5" minimumPatchLevel="0">
 <!-- AIR Application Descriptor File. See http://www.adobe.com/go/learn_air_1.0_application_descriptor_en. -->
-	<id>Boot</id>
-	<name>Boot</name>
+	<id>Shake</id>
+	<name>Shake</name>
 	<version>1.0</version>
-	<filename>Boot</filename>
+	<filename>Shake</filename>
 	<description>
 		<text xml:lang="en">This is a sample Adobe AIR application.</text>
 		<text xml:lang="ja">これは Adobe AIR のサンプルアプリケーションです。</text>
 	</description>
 	<copyright>Copyright 2008, Example Co., Inc.</copyright>
 	<initialWindow>
-		<content>Boot.swf</content>
+		<content>Shake.swf</content>
 		<title>Example Application</title>
 		<systemChrome>standard</systemChrome>
 		<transparent>false</transparent>
@@ -18,8 +18,8 @@
 		<minimizable>true</minimizable>
 		<maximizable>true</maximizable>
 		<resizable>true</resizable>
-		<width>1200</width>
-		<height>700</height>
+		<width>1000</width>
+		<height>800</height>
 		<x>150</x>
 		<y>150</y>
 		<minSize>300 300</minSize>

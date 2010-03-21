@@ -1,9 +1,10 @@
-package shake.core.system 
+package shake.mvc.controllers 
 {
 	import cocktail.core.gunz.Gun;
 	import cocktail.core.gunz.Gunz;
 
-	import shake.core.system.gunz.SystemBullet;
+	import shake.mvc.models.ProjectModel;
+	import shake.mvc.views.ProjectView;
 
 	import flash.events.Event;
 	import flash.filesystem.File;
@@ -13,22 +14,12 @@ package shake.core.system
 	 * 
 	 * Temporary package to deal with the file system.
 	 */
-	public class System 
+	public class ProjectController 
 	{
-		/* VARS */
-		private var _file : File;
-
 		/* GUNZ */
 		public var gunz : Gunz;
 
 		public var gunz_select : Gun;
-
-		public function System()
-		{
-			_file = new File( );
-			_file.addEventListener( Event.SELECT, _file_select );
-			_init_gunz( );
-		}
 
 		private function _init_gunz() : void
 		{
@@ -36,23 +27,54 @@ package shake.core.system
 			gunz_select = new Gun( gunz, this, "sustem-select" );
 		}
 
-		public function open_project() : void
+		/* VARS */
+		private var _shake : Shake;
+
+		private var _file : File;
+
+		private var _view : ProjectView;
+
+		private var _model : ProjectModel;
+
+		public function ProjectController( shake : Shake )		{
+			_init( shake );
+			_init_gunz( );
+			_init_mv( );
+		}
+
+		private function _init( shake : Shake ) : void 
+		{
+			_shake = shake;
+			_file = new File( );
+			_file.addEventListener( Event.SELECT, _file_select );
+		}
+
+		private function _init_mv() : void 
+		{
+			_model = new ProjectModel( );
+			_shake.addChild( _view = new ProjectView( _shake ) );
+			_view.refresh( _model.tree );		}
+
+		public function open( ...etc ) : void
 		{
 			_file.browseForDirectory( "Cocktail app folder" );
 		}
 
 		private function _file_select( event : Event ) : void
 		{
-			var bullet : SystemBullet;
+//			var bullet : ProjectBullet;
 			var files : Array = _file.getDirectoryListing( );
 			var file : File;
+			
 			for(var i : uint = 0; i < files.length; i++)
 			{
 				file = files[ i ] as File;
 				if ( file.isDirectory && file.name == "cocktail" )
 				{
-					bullet = new SystemBullet( _get_layouts( file ), _get_models( file ) );
-					gunz_select.shoot( bullet );
+					// bullet = new ProjectBullet( _get_layouts( file ), _get_models( file ) );
+					// gunz_select.shoot( bullet );
+					_model.feed( _get_layouts( file ), _get_models( file ) );
+					_view.refresh( _model.tree );
 					return;
 				}
 			}
