@@ -30,12 +30,19 @@ package shake.mvc.views
 			_model = new ProjectModel( );
 			//			_model.gunz_change.add( _refresh );
 			_tree = new JTree( );
+			_tree.addSelectionListener( _select );
 			
 			setTitle( "ProjectExplorer" );
 			setSizeWH( 230, 500 );
 			setY( 100 );
+			
 			setContentPane( new JScrollPane( _tree ) );
 			addEventListener( Event.ADDED_TO_STAGE, _show );
+		}
+
+		private function _select( ev : Event ) : void 
+		{
+			trace( "SELECT: " + ev, _tree.getSelectionModel() );
 		}
 
 		private function _show( ...etc ) : void
